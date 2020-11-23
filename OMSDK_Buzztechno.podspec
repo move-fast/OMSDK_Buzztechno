@@ -5,12 +5,13 @@ Pod::Spec.new do |s|
     s.homepage          = 'http://www.buzzsdk.com/'
 
     s.author            = { 'Name' => 'alfonso@buzztechno.com' }
-    s.license           = { :type => 'Apache-2.0', :file => 'LICENSE' }
+    s.license           = { :type => 'Apache-2.0', :file => 'LICENSE.txt' }
 
     s.platform          = :ios
-    s.source            = { :git => 'https://github.com/move-fast/BuzzSDKPod.git', :tag => s.version }
+    s.source            = { :git => 'https://github.com/move-fast/OMSDK_Buzztechno.git', :tag => s.version }
 
     s.ios.deployment_target = '11.0'
-    s.source_files  = 'OMSDK_Buzztechno-Library/*.{h,m}'
-    s.vendored_libraries = 'OMSDK_Buzztechno-Library/*.a'
+    s.ios.vendored_frameworks = 'OMSDK_Buzztechno.framework'
+    s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end  
